@@ -94,7 +94,7 @@ Android Listvew的用法
 ```
 
 效果图：
-[imag](https://github.com/ZiChang818/demo03/blob/master/photo/alistview%E8%BF%90%E8%A1%8C%E5%9B%BE.png)
+![imag](https://github.com/ZiChang818/demo03/blob/master/photo/alistview%E8%BF%90%E8%A1%8C%E5%9B%BE.png)
 
 
 
@@ -146,7 +146,7 @@ Android Listvew的用法
 
 效果预览图
 
-
+![imag](https://github.com/ZiChang818/demo03/blob/master/photo/alterdialog%E7%95%8C%E9%9D%A2%E9%A2%84%E8%A7%88%E5%9B%BE.png)
 
 2、mainactivity进入
 
@@ -190,7 +190,7 @@ public class Main2Activity extends Activity {
 
 运行效果图：
 
-
+![imag](https://github.com/ZiChang818/demo03/blob/master/photo/alterdialog%E7%95%8C%E9%9D%A2%E8%BF%90%E8%A1%8C%E5%9B%BE.png)
 
 
 

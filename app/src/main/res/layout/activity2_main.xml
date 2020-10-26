@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 显示一个普通的文本编辑框组件 -->
+    <EditText android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:editable="false"
+        android:id="@+id/show"/>
+
+    <!-- 定义一个普通的按钮组件 -->
+    <Button android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="自定义View对话框"
+            android:onClick="customView"/>
+
+</LinearLayout>

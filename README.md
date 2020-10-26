@@ -288,7 +288,9 @@ public class Main3Activity extends AppCompatActivity {
 ```
 
 效果图：
-
+![imag](https://github.com/ZiChang818/demo03/blob/master/photo/xml%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%951.png)
+![imag](https://github.com/ZiChang818/demo03/blob/master/photo/xml%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%95%E6%9B%B4%E6%94%B9%E5%A4%A7%E5%B0%8F.png)
+![imag](https://github.com/ZiChang818/demo03/blob/master/photo/xml%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%95%E6%9B%B4%E6%94%B9%E9%A2%9C%E8%89%B2.png)
 
 
 

@@ -57,10 +57,6 @@ Android Listvew的用法
         listView.setAdapter(simpleAdapter);
 ```
 
-效果展示：
-
-
-
 
 
 2、增加监听器
@@ -98,7 +94,7 @@ Android Listvew的用法
 ```
 
 效果图：
-
+[imag](https://github.com/ZiChang818/demo03/blob/master/photo/alistview%E8%BF%90%E8%A1%8C%E5%9B%BE.png)
 
 
 

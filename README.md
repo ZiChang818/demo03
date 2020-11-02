@@ -302,13 +302,130 @@ public class Main3Activity extends AppCompatActivity {
 
 创建上下文操作模式（ActionMode）的上下文菜单
 
-1、
+1、ActionActivity.java
+public class ActionModeActivity extends AppCompatActivity
+{
+
+    String[] names = {"One", "Two", "Three", "Four"};
+    HashMap<View, Boolean> vis;
+    int selected_items = 0;
+    ActionMode am;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_actionmode);
+
+        vis = new HashMap<>();
+
+        ListView LV_am_demo = findViewById(R.id.LV_am_demo);
+        ArrayList<HashMap<String, Object>> lst = new ArrayList<>();
+        for (int i = 0; i <= 3; i++)
+        {
+            HashMap<String, Object> mp = new HashMap<>();
+            mp.put("name", names[i]);
+            mp.put("img", R.drawable.monkey);
+            lst.add(mp);
+        }
+
+        SimpleAdapter sa = new SimpleAdapter(this, lst, R.layout.list_unit_02, new String[]{"name", "img"},
+                new int[]{R.id.list_unit_02_name, R.id.list_unit_02_img});
+        LV_am_demo.setAdapter(sa);
+    }
+
+    public void click_select(View V)
+    {
+        if (am == null)
+            am = startActionMode(callback);
+
+        LinearLayout line_lay = (LinearLayout) V;
+        if (vis.get(V) == null || !vis.get(V))
+        {
+            line_lay.setBackgroundColor(Color.CYAN);
+            vis.put(V, true);
+            selected_items++;
+        }
+        else
+        {
+            line_lay.setBackgroundColor(Color.WHITE);
+            vis.put(V, false);
+            selected_items--;
+        }
+        callback.onActionItemClicked(am, null);
+
+    }
+
+    ActionMode.Callback callback = new ActionMode.Callback()
+    {
+
+        @Override
+        public boolean onCreateActionMode(ActionMode actionMode, Menu menu)
+        {
+            getMenuInflater().inflate(R.menu.menu_blank, menu);
+            return true;
+        }
+
+        @Override
+        public boolean onPrepareActionMode(ActionMode actionMode, Menu menu)
+        {
+            return false;
+        }
+
+        @Override
+        public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem)
+        {
+            actionMode.setTitle(selected_items + " selected");
+            return true;
+        }
+
+        @Override
+        public void onDestroyActionMode(ActionMode actionMode)
+        {
+
+        }
+    };
+
 
 2、
+   <ListView
+        android:id="@+id/LV_am_demo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 3、
+    <LinearLayout
+        android:id="@+id/list_unit_02"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="click_select">
 
-4、
+        <ImageView
+            android:id="@+id/list_unit_02_img"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@android:drawable/sym_def_app_icon"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/list_unit_02_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="fill"
+            android:layout_weight="1"
+            android:gravity="center_vertical|start"
+            android:textSize="18sp" />
+    </LinearLayout>
+
 
 
 
